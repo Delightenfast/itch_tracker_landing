@@ -1,11 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import FirstPage from './pages/FirstPage';
+import Footer from './components/Footer';
+//import Header from './components/Header';
+import FirstSection from './pages/FirstSection';
+import SecondSection from './pages/SecondSection';
 
 function App() {
   return (
     <div className="App">
-      <FirstPage></FirstPage>
+      <FirstSection />
+      <SecondSection />
+      <Footer />
     </div>
   );
 }

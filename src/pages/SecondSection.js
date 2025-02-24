@@ -147,7 +147,6 @@ const SlideDescription = styled.p`
 const SecondSection = () => {
   const awardImages = importImages(require.context("../assets/slider", false, /\.(png|jpe?g|svg)$/));
 
-
   const slideData = [
     {
       images: [awardImages[0], awardImages[6], awardImages[7]],
@@ -160,13 +159,15 @@ const SecondSection = () => {
       description: "환경 데이터 활용 공모전에서 수상하며, 지속 가능한 미래를 위한 데이터 기반의 창의적 아이디어와 실질적 해법을 제시했습니다.",
     },
     {
-      images: [awardImages[1], awardImages[10], awardImages[12], awardImages[11], awardImages[13]],
+      //awardImages[1], awardImages[10],
+      images: [awardImages[12], awardImages[11], awardImages[13]],
       title: "상호 성장과 협력을 위한 업무 제휴",
       description: "협력적 파트너십을 통해 상호 성장과 시너지를 창출하며, 공동의 목표를 달성하기 위해 협약을 체결하고 실행하고 있습니다.",
     },
 
     {
-      images: [awardImages[2], awardImages[3], awardImages[4], awardImages[5],],
+      //awardImages[2],
+      images: [awardImages[3], awardImages[4], awardImages[5],],
       title: "고객 문제에 깊이 다가가기",
       description: "아토피피부염 등 다양한 피부질환을 가진 서포터즈, 엠버서더, 베타테스터와 함께 고객의 문제를 깊이 이해하며, 이를 바탕으로 지속적으로 평가하고 개선해 나가고 있습니다.",
     },

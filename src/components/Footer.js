@@ -73,23 +73,22 @@ const EmailInfo = styled.p`
 `;
 
 const Footer = () => {
-
   return (
     <FooterContainer>
       <div className="footer-top">(주) 딜랏</div>
-      <div>사업자 등록번호: 000-00-00000 | 대표: 류형주</div>
+      <div>사업자 등록번호: 759-86-02593 | 대표: 류형주</div>
       <div>주소: 서울특별시 강남구 역삼동 테헤란로5길 7, 9층 102호 (역삼동, KG Tower)</div>
 
       <div className="footer-links">
-        <a href="#">서비스 이용약관</a>
-        <a href="#">개인정보 처리방침</a>
-        <a href="#">위치기반서비스 이용약관</a>
+        <a href="https://vanilla-meteoroid-aae.notion.site/11254b6d294c80f3b94fe75b3e605ea2?pvs=4" target="_blank">서비스 이용약관</a>
+        <a href="http://vanilla-meteoroid-aae.notion.site" target="_blank">개인정보 처리방침</a>
+        <a href="https://vanilla-meteoroid-aae.notion.site/11254b6d294c80128fe8ce5622d81059?pvs=4" target="_blank">위치기반서비스 이용약관</a>
       </div>
       <SocialIcons>
-        <SocialIcon href="https://www.instagram.com/itchtracker_official/">
+        <SocialIcon href="https://www.instagram.com/itchtracker_official/" target="_blank">
           <img src={Instagram}></img>
         </SocialIcon>
-        <SocialIcon href="https://blog.naver.com/lightenfast">
+        <SocialIcon href="https://blog.naver.com/lightenfast" target="_blank">
           <img src={Naver}></img>
         </SocialIcon>
 

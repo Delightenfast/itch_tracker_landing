@@ -67,10 +67,43 @@ const SocialIcon = styled.a`
 
 `;
 
-const EmailInfo = styled.p`
+const EmailInfo = styled.a`
   font-size: 14px;
   color: #777;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: #333;  /* 마우스를 올렸을 때 색상 변경 */
+    text-decoration: underline;
+  }
 `;
+
+const FooterLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+`;
+
+const FooterLink = styled.a`
+  color: #777;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: #333; /* 마우스 오버 시 색상 변경 */
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+
+  }
+`;
+
 
 const Footer = () => {
   return (
@@ -79,11 +112,26 @@ const Footer = () => {
       <div>사업자 등록번호: 759-86-02593 | 대표: 류형주</div>
       <div>주소: 서울특별시 강남구 역삼동 테헤란로5길 7, 9층 102호 (역삼동, KG Tower)</div>
 
-      <div className="footer-links">
-        <a href="https://vanilla-meteoroid-aae.notion.site/11254b6d294c80f3b94fe75b3e605ea2?pvs=4" target="_blank">서비스 이용약관</a>
-        <a href="http://vanilla-meteoroid-aae.notion.site" target="_blank">개인정보 처리방침</a>
-        <a href="https://vanilla-meteoroid-aae.notion.site/11254b6d294c80128fe8ce5622d81059?pvs=4" target="_blank">위치기반서비스 이용약관</a>
-      </div>
+      <FooterLinks>
+        <FooterLink
+          href="https://vanilla-meteoroid-aae.notion.site/11254b6d294c80f3b94fe75b3e605ea2?pvs=4"
+          target="_blank"
+        >
+          서비스 이용약관
+        </FooterLink>
+        <FooterLink
+          href="http://vanilla-meteoroid-aae.notion.site"
+          target="_blank"
+        >
+          개인정보 처리방침
+        </FooterLink>
+        <FooterLink
+          href="https://vanilla-meteoroid-aae.notion.site/11254b6d294c80128fe8ce5622d81059?pvs=4"
+          target="_blank"
+        >
+          위치기반서비스 이용약관
+        </FooterLink>
+      </FooterLinks>
       <SocialIcons>
         <SocialIcon href="https://www.instagram.com/itchtracker_official/" target="_blank">
           <img src={Instagram}></img>
@@ -93,7 +141,7 @@ const Footer = () => {
         </SocialIcon>
 
       </SocialIcons>
-      <EmailInfo>문의: contact@lightenfast.com</EmailInfo>
+      <EmailInfo href="mailto:contact@lightenfast.com">문의: contact@lightenfast.com</EmailInfo>
     </FooterContainer>
   )
 

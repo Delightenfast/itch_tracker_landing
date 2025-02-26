@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.251658b2.css",
+    "main.js": "/static/js/main.72400b24.js",
+    "static/js/453.6d2eaf92.chunk.js": "/static/js/453.6d2eaf92.chunk.js",
+    "static/media/5.png": "/static/media/5.0efb1bfbbe9517d894c4.png",
+    "static/media/14.png": "/static/media/14.10835c442910f4aefe66.png",
+    "static/media/12.png": "/static/media/12.a7babdd92ad28fe1a1d4.png",
+    "static/media/4.png": "/static/media/4.afdccc03b2db3bfeb770.png",
+    "static/media/3.png": "/static/media/3.7d8e298e75333f803eae.png",
+    "static/media/11.png": "/static/media/11.1ace57a9154ef66f3c17.png",
+    "static/media/10.png": "/static/media/10.9217609f9e878d5518be.png",
+    "static/media/background.png": "/static/media/background.8ec34eeeebcf0c43ea1b.png",
+    "static/media/9.png": "/static/media/9.c8b54b4597d5d5b2f873.png",
+    "static/media/6.png": "/static/media/6.645501ba626955784745.png",
+    "static/media/13.png": "/static/media/13.34941d27d128c24d4d63.png",
+    "static/media/8.png": "/static/media/8.076204dfa8eeb1fb74f8.png",
+    "static/media/7.png": "/static/media/7.76a529c60903665cfb98.png",
+    "static/media/2.png": "/static/media/2.d62746778d5fb6d1fd12.png",
+    "static/media/1.png": "/static/media/1.9e012e5437a187ba3534.png",
+    "static/media/bottomarrow.gif": "/static/media/bottomarrow.d8e5e186ec4e82a9796d.gif",
+    "static/media/playstore_icon.svg": "/static/media/playstore_icon.42c50b016694677639b2f1121041be5f.svg",
+    "static/media/appstore_icon.svg": "/static/media/appstore_icon.2975c51da8eeb9c2c44bc6d86758e5e0.svg",
+    "index.html": "/index.html",
+    "main.251658b2.css.map": "/static/css/main.251658b2.css.map",
+    "main.72400b24.js.map": "/static/js/main.72400b24.js.map",
+    "453.6d2eaf92.chunk.js.map": "/static/js/453.6d2eaf92.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.251658b2.css",
+    "static/js/main.72400b24.js"
+  ]
+}

@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { importImages } from "../utils/importImages";
 
-const SecondSectionContainer = styled.section`
+const FeatureSectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,7 +144,7 @@ const SlideDescription = styled.p`
 `;
 
 
-const SecondSection = () => {
+const FeatureSection = () => {
   const awardImages = importImages(require.context("../assets/slider", false, /\.(png|jpe?g|svg)$/));
 
   const slideData = [
@@ -184,7 +184,7 @@ const SecondSection = () => {
   };
 
   return (
-    <SecondSectionContainer>
+    <FeatureSectionContainer>
       <SectionTitle>나만의 맞춤 솔루션</SectionTitle>
       <FeaturesContainer>
         <FeatureCard>
@@ -254,8 +254,8 @@ const SecondSection = () => {
           ))}
         </Slider>
       </SliderContainer>
-    </SecondSectionContainer>
+    </FeatureSectionContainer>
   );
 };
 
-export default SecondSection;
+export default FeatureSection;

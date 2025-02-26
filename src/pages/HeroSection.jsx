@@ -137,7 +137,7 @@ const ScrollIndicator = styled.div`
 `;
 
 
-const FirstSection = () => {
+const HeroSection = () => {
   return (
     <HeroContainer>
       <Title>가려움 관리로 더 행복한 삶을 만드세요</Title>
@@ -157,4 +157,4 @@ const FirstSection = () => {
   );
 };
 
-export default FirstSection;
+export default HeroSection;

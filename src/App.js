@@ -1,14 +1,14 @@
 import './App.css';
 import Footer from './components/Footer';
 //import Header from './components/Header';
-import FirstSection from './pages/FirstSection';
-import SecondSection from './pages/SecondSection';
+import HeroSection from './pages/HeroSection';
+import FeatureSection from './pages/FeatureSection';
 
 function App() {
   return (
     <div className="App">
-      <FirstSection />
-      <SecondSection />
+      <HeroSection />
+      <FeatureSection />
       <Footer />
     </div>
   );

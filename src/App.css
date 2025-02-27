@@ -1,3 +1,6 @@
 body {
   font-family: "IBM Plex Sans KR", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }

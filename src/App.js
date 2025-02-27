@@ -1,6 +1,5 @@
 import './App.css';
 import Footer from './components/Footer';
-//import Header from './components/Header';
 import HeroSection from './pages/HeroSection';
 import FeatureSection from './pages/FeatureSection';
 

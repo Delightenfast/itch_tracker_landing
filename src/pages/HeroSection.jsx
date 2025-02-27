@@ -79,6 +79,7 @@ const Subtitle = styled.p`
   font-size: 2rem;
   color: #555;
   margin-top: 0;
+  margin-bottom: 32px !important;
   animation: ${fadeInUp} 1.4s ease-out;
 
   @media (max-width: 768px) {

@@ -192,7 +192,7 @@ const SlideFeature = ({ icon, tag, titles, description, images }) => {
       <ImageContainer>
         {images.map((imgSrc, index) => (
           <ImageWrapper key={index}>
-            <Image src={imgSrc} alt={`이미지 ${index + 1}`} />
+            <Image src={imgSrc} alt={`이미지 ${index + 1}`} loading="lazy" />
           </ImageWrapper>
         ))}
       </ImageContainer>

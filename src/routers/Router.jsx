@@ -23,6 +23,9 @@ const Routes = () => {
                     element: <ForInfant />
                 }
             ]
+        },
+        {
+            basename: "/wp-content/plugins/itch_tracker_landing/build/"
         }
     ]
     const router = createHashRouter(routes);

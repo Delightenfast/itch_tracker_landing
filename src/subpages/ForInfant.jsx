@@ -157,7 +157,7 @@ const ForInfant = () => {
 
   const handleCategoryClick = async (category) => {
     // Handle category click event
-    await fetch("http://develop.delight-api.com/landing-page/category-click", {
+    await fetch("https://develop.delight-api.com/landing-page/category-click", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

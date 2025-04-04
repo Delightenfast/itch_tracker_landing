@@ -171,7 +171,7 @@ export default function Modal({ data, onClose }) {
         setIsLoading(true);
 
         try {
-            const response = await fetch("http://develop.delight-api.com/landing-page/email-register", {
+            const response = await fetch("https://develop.delight-api.com/landing-page/email-register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

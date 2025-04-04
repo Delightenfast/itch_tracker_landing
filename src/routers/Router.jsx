@@ -25,7 +25,7 @@ const Routes = () => {
             ]
         },
         {
-            basename: "/wp-content/plugins/itch_tracker_landing/build"
+            basename: "/"
         }
     ]
     const router = createHashRouter(routes);

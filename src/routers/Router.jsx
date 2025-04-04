@@ -16,7 +16,8 @@ const Routes = () => {
                     element: <>
                         <HeroSection />
                         <FeatureSection />
-                        <Footer /></>
+                        <Footer />
+                    </>
                 },
                 {
                     path: "/for-infant",

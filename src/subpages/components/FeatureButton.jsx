@@ -21,38 +21,32 @@ const Card = styled.div`
 
 const Thumbnail = styled.img`
   width: 100%;
-  max-width: 220px;
+  max-width: 400px;
   border-radius: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 `;
 
 const Title = styled.h3`
   font-size: 16px;
   font-weight: bold;
+  margin-top: 0;
   margin-bottom: 6px;
   color: #333;
 `;
 
 const Subtitle = styled.h4`
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 0px;
   color: rgba(107, 78, 197, 1.0);
-`;
-
-const Description = styled.p`
-  font-size: 13px;
-  color: #555;
-  line-height: 1.4;
 `;
 
 export default function FeatureButton({ data, onClick }) {
   return (
     <Card onClick={() => onClick(data)}>
-      <Thumbnail src={data.image} alt={data.title} />
       <Title>{data.title}</Title>
+      <Thumbnail src={data.image} alt={data.title} />
       <Subtitle>{data.subtitle}</Subtitle>
-      <Description>{data.description}</Description>
     </Card>
   );
 }

@@ -27,6 +27,7 @@ const ModalContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 24px;
+    width: 80%;
   }
 `;
 
@@ -49,19 +50,15 @@ const Content = styled.div`
 
 const Title = styled.h2`
   font-size: 22px;
-  margin-bottom: 8px;
-`;
-
-const Subtitle = styled.h4`
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #5a38b9;
+  margin-bottom: 0px;
 `;
 
 const Description = styled.p`
   font-size: 14px;
   margin-bottom: 20px;
   color: #444;
+
+  text-align: left;
 `;
 
 const Form = styled.div`
@@ -77,15 +74,21 @@ const Input = styled.input`
   max-width: 440px;
   padding: 12px;
   margin-bottom: 12px;
-  border: 2px solid #3e4ed4;
+  border: 2px solid rgba(107, 78, 197, 1.0);
   border-radius: 8px;
   font-size: 14px;
   box-sizing: border-box;
+
+    &:focus {
+    outline: none;
+    border-color: rgba(107, 78, 197, 1.0);
+    box-shadow: 0 0 5px rgba(107, 78, 197, 0.5);
+    }
 `;
 
 const Button = styled.button`
   padding: 12px 24px;
-  background-color: #3e4ed4;
+  background-color: rgba(107, 78, 197, 1.0);
   color: white;
   font-weight: bold;
   border: none;
@@ -94,6 +97,10 @@ const Button = styled.button`
   margin-top: 8px; /* 이걸로 여백 조절 */
   align-self: flex-start;
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
+
+  &:hover {
+    background-color: rgba(107, 78, 197, 0.8);
+  }
 `;
 
 const CloseBtn = styled.button`
@@ -111,6 +118,12 @@ const ResultModal = ({ message, onClose }) => {
     const [showConfetti, setShowConfetti] = useState(true);
 
     useEffect(() => {
+
+        if (message !== "메일로 곧 소식을 전해드릴게요!") {
+            setShowConfetti(false);
+            return;
+        }
+
         const timer = setTimeout(() => setShowConfetti(false), 5000); // 3초 후 멈춤
         return () => clearTimeout(timer);
     }, []);
@@ -138,6 +151,7 @@ const ResultModal = ({ message, onClose }) => {
 
 // =============== MAIN MODAL ===============
 export default function Modal({ data, onClose }) {
+
     const [email, setEmail] = useState("");
     const [note, setNote] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -154,27 +168,37 @@ export default function Modal({ data, onClose }) {
             alert("올바른 이메일을 입력해주세요.");
             return;
         }
-
         setIsLoading(true);
 
         try {
-            // ⏳ 여기에 실제 전송 로직이 들어갑니다
-            await new Promise((res) => setTimeout(res, 1500)); // 가짜 딜레이
+            const response = await fetch("http://develop.delight-api.com/landing-page/email-register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + data.token
+                },
+                body: JSON.stringify({
+                    "uuid": data.uuid,
+                    "utm": data.utm,
+                    "category": data.category,
+                    "email": email,
+                    "description": note || "",
+                }),
+            });
 
-            console.log("✅ 전송 완료:");
-            console.log("이메일:", email);
-            console.log("메모:", note);
+            // ✅ 여기서 403, 400 등 상태 체크
+            if (!response.ok) {
+                const errorText = await response.text();
+                setResultMessage("네트워크 문제로, 다시 전송 버튼 눌러주세요");
+                return;
+            }
 
-            setResultMessage("전송이 완료되었습니다!");
-
-            // Lottie 애니메이션을 여기에 추가할 수 있습니다.
-
+            setResultMessage("메일로 곧 소식을 전해드릴게요!");
 
             setEmail("");
             setNote("");
         } catch (err) {
-            console.error("전송 실패:", err);
-            setResultMessage("전송에 실패했습니다. 다시 시도해주세요.");
+            setResultMessage("네트워크 문제로, 다시 전송 버튼 눌러주세요");
         } finally {
             setIsLoading(false);
         }
@@ -193,8 +217,7 @@ export default function Modal({ data, onClose }) {
                     <Image src={data.image} alt={data.title} />
                     <Content>
                         <Title>{data.title}</Title>
-                        <Subtitle>{data.subtitle}</Subtitle>
-                        <Description>{data.description}</Description>
+                        <Description>{data.descriptions[0]}<br /><br />{data.descriptions[1]}</Description>
                         <Form>
                             <Input
                                 type="email"
@@ -209,7 +232,7 @@ export default function Modal({ data, onClose }) {
                                 onChange={(e) => setNote(e.target.value)}
                             />
                             <Button onClick={handleSubmit} disabled={isLoading}>
-                                {isLoading ? "전송 중..." : "전송"}
+                                {isLoading ? "전송 중..." : data.sendMessage}
                             </Button>
                         </Form>
                     </Content>

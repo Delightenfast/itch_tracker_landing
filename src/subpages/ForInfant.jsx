@@ -131,7 +131,7 @@ const ForInfant = () => {
       localStorage.setItem("userUUID", newUUID);
     }
 
-    fetch("http://develop.delight-api.com/user/login", {
+    fetch("https://develop.delight-api.com/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

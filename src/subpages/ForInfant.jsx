@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { v4 as uuidv4 } from 'uuid';
 
+import Modal from "./components/Modal";
 import FeatureButton from "./components/FeatureButton";
 
 import Infant1 from "../assets/subpages/infant/infant_1.png";
 import Infant2 from "../assets/subpages/infant/infant_2.png";
 import Infant3 from "../assets/subpages/infant/infant_3.png";
 import Infant4 from "../assets/subpages/infant/infant_4.png";
+
 
 
 const PageWrapper = styled.div`
@@ -84,6 +86,8 @@ const ForInfant = () => {
   let userUUID = localStorage.getItem("userUUID");
   const utmSource = new URLSearchParams(window.location.search).get("utm_source") || "defaultUTM";
 
+  const [modalData, setModalData] = useState(null);
+
   //USER UUID가 없을 경우 UUID 생성
   useEffect(() => {
     if (!userUUID) {
@@ -96,14 +100,15 @@ const ForInfant = () => {
 
   const handleCategoryClick = async (category) => {
     // Handle category click event
-    const response = await fetch("http://develop.delight-api.com/landing-page/category-click", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ "uuid": userUUID, "utm": utmSource, "category": category }),
-    });
+    // const response = await fetch("http://develop.delight-api.com/landing-page/category-click", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ "uuid": userUUID, "utm": utmSource, "category": category }),
+    // });
     console.log("Selected category:", category);
+    setModalData(categories[category]);
   }
 
   const categories = [
@@ -151,6 +156,7 @@ const ForInfant = () => {
             <FeatureButton key={idx} data={item} onClick={() => handleCategoryClick(idx)} />
           ))}
         </FeaturesGrid>
+        <Modal data={modalData} onClose={() => setModalData(null)} />
       </ContentWrapper>
 
       <Footer>

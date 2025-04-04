@@ -1,4 +1,3 @@
-// components/FeatureButton.js
 import React from "react";
 import styled from "styled-components";
 
@@ -48,19 +47,8 @@ const Description = styled.p`
 `;
 
 export default function FeatureButton({ data, onClick }) {
-  const handleClick = () => {
-    onClick();
-  };
   return (
-    <Card onClick={handleClick}>
-      <Thumbnail src={data.image} alt={data.title} />
-      <Title>{data.title}</Title>
-      <Subtitle>{data.subtitle}</Subtitle>
-      <Description>{data.description}</Description>
-    </Card>
-  );
-  return (
-    <Card>
+    <Card onClick={() => onClick(data)}>
       <Thumbnail src={data.image} alt={data.title} />
       <Title>{data.title}</Title>
       <Subtitle>{data.subtitle}</Subtitle>

@@ -60,7 +60,7 @@ const ContentWrapper = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #f0f4ff, #e0e7ff);
+  background: #DDEBF9;
   padding: 20px 20px;
   text-align: center;
   display: flex;

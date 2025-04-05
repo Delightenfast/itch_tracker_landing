@@ -50,14 +50,13 @@ const Content = styled.div`
 
 const Title = styled.h2`
   font-size: 22px;
-  margin-bottom: 0px;
+  margin-bottom: 0px !important;
 `;
 
 const Description = styled.p`
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
   color: #444;
-
   text-align: left;
 `;
 

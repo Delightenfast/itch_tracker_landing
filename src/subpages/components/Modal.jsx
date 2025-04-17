@@ -215,8 +215,16 @@ export default function Modal({ data, onClose }) {
                     <CloseBtn onClick={onClose}>✖</CloseBtn>
                     <Image src={data.image} alt={data.title} />
                     <Content>
-                        <Title>{data.title}</Title>
-                        <Description>{data.descriptions[0]}<br /><br />{data.descriptions[1]}</Description>
+                        <Title>{data.modalTitle}</Title>
+                        <Description>
+                            {data.modalDescription} <br />
+                            {data.descriptions.map((desc, index) => (
+                                <span key={index} style={{ display: "block" }}>
+                                    {desc}
+                                </span>
+                            ))}
+                        </Description>
+
                         <Form>
                             <Input
                                 type="email"
@@ -226,10 +234,11 @@ export default function Modal({ data, onClose }) {
                             />
                             <Input
                                 type="text"
-                                placeholder="(옵션) 토닥이 그릴톡이 있다면 어떻게 쓰고 싶으신가요?"
+                                placeholder={data.promoteEmailPlaceholder}
                                 value={note}
                                 onChange={(e) => setNote(e.target.value)}
                             />
+                            <Description>{data.promoteEmail}</Description>
                             <Button onClick={handleSubmit} disabled={isLoading}>
                                 {isLoading ? "전송 중..." : data.sendMessage}
                             </Button>

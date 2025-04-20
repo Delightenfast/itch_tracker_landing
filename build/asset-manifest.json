@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wp-content/plugins/itch_tracker_landing/build/static/css/main.f6c0980d.css",
-    "main.js": "/wp-content/plugins/itch_tracker_landing/build/static/js/main.7e5326e4.js",
+    "main.js": "/wp-content/plugins/itch_tracker_landing/build/static/js/main.1b1e0914.js",
     "static/js/453.6d2eaf92.chunk.js": "/wp-content/plugins/itch_tracker_landing/build/static/js/453.6d2eaf92.chunk.js",
     "static/media/background.png": "/wp-content/plugins/itch_tracker_landing/build/static/media/background.8ec34eeeebcf0c43ea1b.png",
     "static/media/infant_2.png": "/wp-content/plugins/itch_tracker_landing/build/static/media/infant_2.9b79d6b939caa1aa9598.png",
@@ -27,11 +27,11 @@
     "index.html": "/wp-content/plugins/itch_tracker_landing/build/index.html",
     "static/media/appstore_icon.svg": "/wp-content/plugins/itch_tracker_landing/build/static/media/appstore_icon.2975c51da8eeb9c2c44bc6d86758e5e0.svg",
     "main.f6c0980d.css.map": "/wp-content/plugins/itch_tracker_landing/build/static/css/main.f6c0980d.css.map",
-    "main.7e5326e4.js.map": "/wp-content/plugins/itch_tracker_landing/build/static/js/main.7e5326e4.js.map",
+    "main.1b1e0914.js.map": "/wp-content/plugins/itch_tracker_landing/build/static/js/main.1b1e0914.js.map",
     "453.6d2eaf92.chunk.js.map": "/wp-content/plugins/itch_tracker_landing/build/static/js/453.6d2eaf92.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f6c0980d.css",
-    "static/js/main.7e5326e4.js"
+    "static/js/main.1b1e0914.js"
   ]
 }
